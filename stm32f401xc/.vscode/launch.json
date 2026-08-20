@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Black Pill BSP (GOIC)",
+            "type": "cortex-debug",
+            "request": "launch",
+
+            "cwd": "${workspaceFolder}",
+
+            "executable": "${workspaceFolder}/build/output/GOIC_blackPill_bsp.elf",
+
+            "servertype": "openocd",
+
+            "device": "STM32F401xC",
+            "interface": "swd",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+
+            "runToEntryPoint": "main"
+        }
+    ]
+}

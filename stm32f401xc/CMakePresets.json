@@ -1,0 +1,54 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+
+    "configurePresets": [
+        {
+            "name": "debug",
+            "displayName": "Debug - BlackPill BSP (GOIC)",
+            "description": "Debug build for STM32F401xC using ARM GNU Toolchain and Ninja",
+
+            "generator": "Ninja",
+
+            "binaryDir": "${sourceDir}/build",
+
+            "toolchainFile": "${sourceDir}/arm-none-eabi.cmake",
+
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+
+        {
+            "name": "release",
+            "displayName": "Release - BlackPill BSP (GOIC)",
+            "description": "Release build for STM32F401xC using ARM GNU Toolchain and Ninja",
+
+            "generator": "Ninja",
+
+            "binaryDir": "${sourceDir}/build-release",
+
+            "toolchainFile": "${sourceDir}/toolchain-arm-gcc.cmake",
+
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+
+        {
+            "name": "release",
+            "configurePreset": "release"
+        }
+    ]
+}

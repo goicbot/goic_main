@@ -1,0 +1,27 @@
+# CMake
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+
+# Ninja
+.ninja_deps
+.ninja_log
+rules.ninja
+
+# VS Code local state
+.vscode/.cmake/
+.vscode/ipch/
+
+# Firmware generated artifacts
+*.elf
+*.bin
+*.hex
+*.map
+
+# macOS
+.DS_Store
